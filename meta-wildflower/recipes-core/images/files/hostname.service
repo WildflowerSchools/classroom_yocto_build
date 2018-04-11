@@ -1,0 +1,12 @@
+[Unit]
+Description=Set Hostname
+Requires=boot.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=/boot/config/settings.txt
+ExecStart=/usr/bin/hostnamectl set-hostname $HOSTNAME
+
+[Install]
+WantedBy=local-fs.target

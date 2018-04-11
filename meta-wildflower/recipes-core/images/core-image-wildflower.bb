@@ -14,6 +14,7 @@ CORE_OS = " \
     openvpn \
     tzdata \
     ntp \
+    wildflower-misc \
 "
 
 WIFI_SUPPORT = " \

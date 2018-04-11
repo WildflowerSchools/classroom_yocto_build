@@ -1,0 +1,4 @@
+# This file is sourced by a number of startup scripts. More settings
+# may be added in the future.
+
+HOSTNAME=sampiname
