@@ -1,6 +1,7 @@
 [Unit]
 Description=Set Hostname
 Requires=boot.mount
+Before=avahi-daemon.service
 
 [Service]
 Type=oneshot

@@ -23,6 +23,7 @@ WIFI_SUPPORT = " \
     linux-firmware-bcm43430 \
     wireless-tools \
     wpa-supplicant \
+    avahi-daemon \
 "
 
 IMAGE_INSTALL += " \
