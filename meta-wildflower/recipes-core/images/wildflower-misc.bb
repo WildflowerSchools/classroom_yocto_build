@@ -5,6 +5,7 @@ LICENSE = "MIT"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
+            file://20-wired.network \
             file://25-wireless.network \
             file://wpa_supplicant.conf \
             file://settings.txt \
@@ -24,6 +25,7 @@ do_install() {
     ln      -sf ${systemd_unitdir}/system/hostname.service ${D}${sysconfdir}/systemd/system/local-fs.target.wants/
 
     install -d                                     ${D}${sysconfdir}/systemd/network/
+    install -m 0644 ${WORKDIR}/20-wired.network    ${D}${sysconfdir}/systemd/network/
     install -m 0644 ${WORKDIR}/25-wireless.network ${D}${sysconfdir}/systemd/network/
     install -d                                     ${D}${sysconfdir}/wpa_supplicant
     ln      -sf /boot/config/wpa_supplicant.conf   ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant-wlan0.conf
