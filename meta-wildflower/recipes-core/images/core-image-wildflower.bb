@@ -29,6 +29,8 @@ WIFI_SUPPORT = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${WIFI_SUPPORT} \
+    vim \
+    tmux \
 "
 
 export IMAGE_BASENAME = "core-image-wildflower"
