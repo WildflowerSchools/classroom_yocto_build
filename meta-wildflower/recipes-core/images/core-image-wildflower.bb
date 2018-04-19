@@ -14,7 +14,7 @@ CORE_OS = " \
     openvpn \
     tzdata \
     ntp \
-    wildflower-misc \
+    wildflower-misc-hostname \
 "
 
 WIFI_SUPPORT = " \
@@ -22,7 +22,7 @@ WIFI_SUPPORT = " \
     iw \
     linux-firmware-bcm43430 \
     wireless-tools \
-    wpa-supplicant \
+    wildflower-misc-net \
     avahi-daemon \
 "
 
