@@ -15,6 +15,7 @@ CORE_OS = " \
     tzdata \
     ntp \
     wildflower-misc-hostname \
+    salt-minion \
 "
 
 WIFI_SUPPORT = " \

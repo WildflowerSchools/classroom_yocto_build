@@ -1,0 +1,263 @@
+diff -ru salt-2018.3.0/pkg/smartos/esky/sodium_grabber_installer.py salt-2018.3.0.fixed/pkg/smartos/esky/sodium_grabber_installer.py
+--- salt-2018.3.0/pkg/smartos/esky/sodium_grabber_installer.py	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/pkg/smartos/esky/sodium_grabber_installer.py	2018-04-16 18:45:55.025737932 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ The setup script for sodium_grabber
+diff -ru salt-2018.3.0/salt/daemons/test/test_master.py salt-2018.3.0.fixed/salt/daemons/test/test_master.py
+--- salt-2018.3.0/salt/daemons/test/test_master.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/daemons/test/test_master.py	2018-04-16 18:45:55.025737932 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ Runs minion floscript
+diff -ru salt-2018.3.0/salt/daemons/test/test_minion.py salt-2018.3.0.fixed/salt/daemons/test/test_minion.py
+--- salt-2018.3.0/salt/daemons/test/test_minion.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/daemons/test/test_minion.py	2018-04-16 18:45:55.025737932 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ Runs minion floscript
+diff -ru salt-2018.3.0/salt/daemons/test/test_plans.py salt-2018.3.0.fixed/salt/daemons/test/test_plans.py
+--- salt-2018.3.0/salt/daemons/test/test_plans.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/daemons/test/test_plans.py	2018-04-16 18:45:55.025737932 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ '''
+diff -ru salt-2018.3.0/salt/ext/vsan/vsanapiutils.py salt-2018.3.0.fixed/salt/ext/vsan/vsanapiutils.py
+--- salt-2018.3.0/salt/ext/vsan/vsanapiutils.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/ext/vsan/vsanapiutils.py	2018-04-16 18:45:55.025737932 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ """
+diff -ru salt-2018.3.0/salt/netapi/rest_cherrypy/wsgi.py salt-2018.3.0.fixed/salt/netapi/rest_cherrypy/wsgi.py
+--- salt-2018.3.0/salt/netapi/rest_cherrypy/wsgi.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/netapi/rest_cherrypy/wsgi.py	2018-04-16 18:45:55.029737954 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # encoding: utf-8
+ '''
+ Deployment
+diff -ru salt-2018.3.0/salt/pillar/nodegroups.py salt-2018.3.0.fixed/salt/pillar/nodegroups.py
+--- salt-2018.3.0/salt/pillar/nodegroups.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/pillar/nodegroups.py	2018-04-16 18:45:55.029737954 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ '''
+diff -ru salt-2018.3.0/salt/pillar/pepa.py salt-2018.3.0.fixed/salt/pillar/pepa.py
+--- salt-2018.3.0/salt/pillar/pepa.py	2018-04-02 11:35:12.000000000 -0500
++++ salt-2018.3.0.fixed/salt/pillar/pepa.py	2018-04-16 18:45:55.029737954 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ Pepa
+diff -ru salt-2018.3.0/scripts/salt salt-2018.3.0.fixed/scripts/salt
+--- salt-2018.3.0/scripts/salt	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Publish commands to the salt system from the command line on the master.
+ '''
+diff -ru salt-2018.3.0/scripts/salt-api salt-2018.3.0.fixed/scripts/salt-api
+--- salt-2018.3.0/scripts/salt-api	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-api	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ 
+ # Import salt libs
+ from salt.scripts import salt_api
+diff -ru salt-2018.3.0/scripts/salt-call salt-2018.3.0.fixed/scripts/salt-call
+--- salt-2018.3.0/scripts/salt-call	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-call	2018-04-16 18:45:54.277733758 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Directly call a salt command in the modules, does not require a running salt
+ minion to run.
+diff -ru salt-2018.3.0/scripts/salt-cloud salt-2018.3.0.fixed/scripts/salt-cloud
+--- salt-2018.3.0/scripts/salt-cloud	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-cloud	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Publish commands to the salt system from the command line on the master.
+ '''
+diff -ru salt-2018.3.0/scripts/salt-cp salt-2018.3.0.fixed/scripts/salt-cp
+--- salt-2018.3.0/scripts/salt-cp	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-cp	2018-04-16 18:44:55.441395445 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Publish commands to the salt system from the command line on the master.
+ '''
+diff -ru salt-2018.3.0/scripts/salt-key salt-2018.3.0.fixed/scripts/salt-key
+--- salt-2018.3.0/scripts/salt-key	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-key	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Manage the authentication keys with salt-key
+ '''
+diff -ru salt-2018.3.0/scripts/salt-master salt-2018.3.0.fixed/scripts/salt-master
+--- salt-2018.3.0/scripts/salt-master	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-master	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Start the salt-master
+ '''
+diff -ru salt-2018.3.0/scripts/salt-minion salt-2018.3.0.fixed/scripts/salt-minion
+--- salt-2018.3.0/scripts/salt-minion	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-minion	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ This script is used to kick off a salt minion daemon
+ '''
+diff -ru salt-2018.3.0/scripts/salt-proxy salt-2018.3.0.fixed/scripts/salt-proxy
+--- salt-2018.3.0/scripts/salt-proxy	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-proxy	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ This script is used to kick off a salt proxy minion daemon
+diff -ru salt-2018.3.0/scripts/salt-run salt-2018.3.0.fixed/scripts/salt-run
+--- salt-2018.3.0/scripts/salt-run	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-run	2018-04-16 18:45:09.101475823 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Execute a salt convenience routine
+ '''
+diff -ru salt-2018.3.0/scripts/salt-ssh salt-2018.3.0.fixed/scripts/salt-ssh
+--- salt-2018.3.0/scripts/salt-ssh	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-ssh	2018-04-16 18:45:54.277733758 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Execute the salt ssh system
+ '''
+diff -ru salt-2018.3.0/scripts/salt-syndic salt-2018.3.0.fixed/scripts/salt-syndic
+--- salt-2018.3.0/scripts/salt-syndic	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/salt-syndic	2018-04-16 18:45:54.277733758 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ This script is used to kick off a salt syndic daemon
+ '''
+diff -ru salt-2018.3.0/scripts/spm salt-2018.3.0.fixed/scripts/spm
+--- salt-2018.3.0/scripts/spm	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/scripts/spm	2018-04-16 18:45:54.281733781 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Publish commands to the salt system from the command line on the master.
+ 
+diff -ru salt-2018.3.0/setup.py salt-2018.3.0.fixed/setup.py
+--- salt-2018.3.0/setup.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/setup.py	2018-04-16 18:44:45.093333785 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ The setup script for salt
+diff -ru salt-2018.3.0/tests/integration/files/file/base/script.py salt-2018.3.0.fixed/tests/integration/files/file/base/script.py
+--- salt-2018.3.0/tests/integration/files/file/base/script.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/tests/integration/files/file/base/script.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ from __future__ import absolute_import
+diff -ru salt-2018.3.0/tests/integration/files/file/base/_states/salttest.py salt-2018.3.0.fixed/tests/integration/files/file/base/_states/salttest.py
+--- salt-2018.3.0/tests/integration/files/file/base/_states/salttest.py	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/tests/integration/files/file/base/_states/salttest.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ from __future__ import absolute_import
+diff -ru salt-2018.3.0/tests/jenkins.py salt-2018.3.0.fixed/tests/jenkins.py
+--- salt-2018.3.0/tests/jenkins.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/tests/jenkins.py	2018-04-16 18:45:55.029737954 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ This script is used to test Salt from a Jenkins server, specifically
+diff -ru salt-2018.3.0/tests/minionswarm.py salt-2018.3.0.fixed/tests/minionswarm.py
+--- salt-2018.3.0/tests/minionswarm.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/tests/minionswarm.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ 
+ '''
+diff -ru salt-2018.3.0/tests/runtests.py salt-2018.3.0.fixed/tests/runtests.py
+--- salt-2018.3.0/tests/runtests.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/tests/runtests.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''
+ Discover all instances of unittest.TestCase in this directory.
+diff -ru salt-2018.3.0/tests/saltsh.py salt-2018.3.0.fixed/tests/saltsh.py
+--- salt-2018.3.0/tests/saltsh.py	2018-04-02 11:35:13.000000000 -0500
++++ salt-2018.3.0.fixed/tests/saltsh.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ # -*- coding: utf-8 -*-
+ '''\
+ Welcome to the Salt repl which exposes the execution environment of a minion in
+diff -ru salt-2018.3.0/tests/wheeltest.py salt-2018.3.0.fixed/tests/wheeltest.py
+--- salt-2018.3.0/tests/wheeltest.py	2017-07-25 20:04:28.000000000 -0500
++++ salt-2018.3.0.fixed/tests/wheeltest.py	2018-04-16 18:45:55.033737976 -0500
+@@ -1,6 +1,6 @@
+ # -*- coding: utf-8 -*-
+ 
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ '''
+ Test interacting with the wheel system. This script is useful when testing
+ wheel modules
