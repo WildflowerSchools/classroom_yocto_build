@@ -32,6 +32,7 @@ IMAGE_INSTALL += " \
     ${WIFI_SUPPORT} \
     vim \
     tmux \
+    procps \
 "
 
 export IMAGE_BASENAME = "core-image-wildflower"

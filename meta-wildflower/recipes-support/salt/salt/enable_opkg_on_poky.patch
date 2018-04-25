@@ -1,0 +1,47 @@
+diff --git a/salt/grains/core.py b/salt/grains/core.py
+index b7d4466..17aed5a 100644
+--- a/salt/grains/core.py
++++ b/salt/grains/core.py
+@@ -1220,6 +1220,7 @@ _OS_NAME_MAP = {
+     'synology': 'Synology',
+     'nilrt': 'NILinuxRT',
+     'nilrt-xfce': 'NILinuxRT-XFCE',
++    'poky': 'Poky',
+     'manjaro': 'Manjaro',
+     'manjarolin': 'Manjaro',
+     'antergos': 'Antergos',
+@@ -1768,7 +1769,7 @@ def os_data():
+         osarch = __salt__['cmd.run']('dpkg --print-architecture').strip()
+     elif grains.get('os_family') == 'RedHat':
+         osarch = __salt__['cmd.run']('rpm --eval %{_host_cpu}').strip()
+-    elif grains.get('os_family') == 'NILinuxRT':
++    elif grains.get('os_family') in ('NILinuxRT', 'Poky'):
+         archinfo = {}
+         for line in __salt__['cmd.run']('opkg print-architecture').splitlines():
+             if line.startswith('arch'):
+diff --git a/salt/modules/opkg.py b/salt/modules/opkg.py
+index bf21aef..f38adf1 100644
+--- a/salt/modules/opkg.py
++++ b/salt/modules/opkg.py
+@@ -60,7 +60,7 @@ def __virtual__():
+     '''
+     Confirm this module is on a nilrt based system
+     '''
+-    if __grains__.get('os_family', False) == 'NILinuxRT':
++    if __grains__.get('os_family', False) in ('NILinuxRT', 'Poky'):
+         return __virtualname__
+     return (False, "Module opkg only works on nilrt based systems")
+ 
+diff --git a/salt/states/pkgrepo.py b/salt/states/pkgrepo.py
+index 4c8b9c9..455262c 100644
+--- a/salt/states/pkgrepo.py
++++ b/salt/states/pkgrepo.py
+@@ -378,7 +378,7 @@ def managed(name, ppa=None, **kwargs):
+             if disabled is not None \
+             else salt.utils.data.is_true(enabled)
+ 
+-    elif os_family == 'nilinuxrt':
++    elif os_family in ('nilinuxrt', 'poky'):
+         # opkg is the pkg virtual
+         kwargs['enabled'] = not salt.utils.data.is_true(disabled) \
+             if disabled is not None \

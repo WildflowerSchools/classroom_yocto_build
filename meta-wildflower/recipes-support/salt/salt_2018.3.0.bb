@@ -26,6 +26,7 @@ SRC_URI = "https://files.pythonhosted.org/packages/source/s/${SRCNAME}/${SRCNAME
            file://cloud \
            file://roster \
            file://set_python_location_hashbang.patch \
+           file://enable_opkg_on_poky.patch \
 "
 
 SRC_URI[md5sum] = "b6ec271b59554b9af7ff4005028434b5"
