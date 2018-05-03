@@ -21,16 +21,29 @@ RDEPENDS_${PN}-collector = " \
     ${PN}-common \
     "
 
+RDEPENDS_${PN}-uploader = " \
+    python3-argparse \
+    python3-datetime \
+    python3-json \
+    python3-lang \
+\
+    python3-redis \
+    redis \
+    sensei-client \
+    ${PN}-common \
+    "
+
 inherit systemd
 
-PACKAGES="${PN}-common ${PN}-collector"
-SYSTEMD_PACKAGES="${PN}-collector"
+PACKAGES="${PN}-common ${PN}-collector ${PN}-uploader"
+SYSTEMD_PACKAGES="${PN}-collector ${PN}-uploader"
 
 SRCREV = "2c204939aef0c5be2ecf2c91c455c45bb9fd002a"
 SRC_URI = " \
     git://github.com/WildflowerSchools/sensei_mesh;protocol=http \
     file://COPYING.MIT \
     file://pyaci-collector.service \
+    file://pyaci-uploader.service \
     file://serial.rules \
     "
 
@@ -49,12 +62,14 @@ do_install() {
     install -m 0644 ${S}/datetime_modulo.py ${D}/opt/wildflower/pyaci
     install -m 0644 ${S}/sensei_cmd.py      ${D}/opt/wildflower/pyaci
     install -m 0755 ${S}/collector.py       ${D}/opt/wildflower/pyaci
+    install -m 0755 ${S}/uploader.py       ${D}/opt/wildflower/pyaci
 
     install         -d                       ${D}${ROOT_HOME}
     install -m 0644 ${S}/example_sensei.yaml ${D}${ROOT_HOME}/.sensei.yaml
 
     install         -d                                 ${D}${systemd_unitdir}/system
     install -m 0644 ${WORKDIR}/pyaci-collector.service ${D}${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/pyaci-uploader.service  ${D}${systemd_unitdir}/system
 
     install         -d                      ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${WORKDIR}/serial.rules ${D}${sysconfdir}/udev/rules.d
@@ -76,5 +91,10 @@ FILES_${PN}-collector = " \
     ${sysconfdir}/udev/rules.d/serial.rules \
     "
 SYSTEMD_SERVICE_${PN}-collector = "${PN}-collector.service"
+
+FILES_${PN}-uploader = " \
+    /opt/wildflower/pyaci/uploader.py \
+    "
+SYSTEMD_SERVICE_${PN}-uploader = "${PN}-uploader.service"
 
 LIC_FILES_CHKSUM = "file://../../COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"

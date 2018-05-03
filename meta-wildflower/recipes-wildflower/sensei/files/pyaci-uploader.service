@@ -1,0 +1,13 @@
+[Unit]
+Description=Upload Wildflower Sensor Data
+Requires=network-online.target
+
+[Service]
+Type=simple
+#@python3 means that "wildflower" will be shown as executable name in
+#"ps", but python3 is the executable
+ExecStart=@/usr/bin/python3 wildflower /opt/wildflower/pyaci/uploader.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

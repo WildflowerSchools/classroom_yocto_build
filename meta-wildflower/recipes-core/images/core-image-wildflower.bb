@@ -35,6 +35,7 @@ IMAGE_INSTALL += " \
     tmux \
     procps \
     pyaci-collector \
+    pyaci-uploader \
 "
 
 export IMAGE_BASENAME = "core-image-wildflower"
