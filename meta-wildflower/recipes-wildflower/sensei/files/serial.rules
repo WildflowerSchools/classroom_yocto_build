@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", TAG+="systemd", ENV{SYSTEMD_WANTS}="pyaci-collector.service"

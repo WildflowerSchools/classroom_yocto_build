@@ -1,0 +1,11 @@
+[Unit]
+Description=Collect Wildflower Sensor Data
+Requires=redis.service
+BindsTo=dev-ttyUSB0.device
+
+[Service]
+Type=simple
+#@python3 means that "wildflower" will be shown as executable name in
+#"ps", but python3 is the executable
+ExecStart=@/usr/bin/python3 wildflower /opt/wildflower/pyaci/collector.py
+Restart=always
