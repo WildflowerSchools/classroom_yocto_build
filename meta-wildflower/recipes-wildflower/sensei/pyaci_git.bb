@@ -2,6 +2,8 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 FILESEXTRAPATHS_append := "${TOPDIR}/../poky/meta"
 
+PR="r1"
+
 DESCRIPTION = "Sensor Data Capture and Upload"
 HOMEPAGE = ""
 LICENSE = "MIT"
@@ -38,9 +40,9 @@ inherit systemd
 PACKAGES="${PN}-common ${PN}-collector ${PN}-uploader"
 SYSTEMD_PACKAGES="${PN}-collector ${PN}-uploader"
 
-SRCREV = "2c204939aef0c5be2ecf2c91c455c45bb9fd002a"
+SRCREV = "c1c2153a678646299a122f0ec9d6733c86687d58"
 SRC_URI = " \
-    git://github.com/WildflowerSchools/sensei_mesh;protocol=http \
+    git://github.com/Circuitsoft/sensei_mesh;protocol=http;branch=new_config \
     file://COPYING.MIT \
     file://pyaci-collector.service \
     file://pyaci-uploader.service \
@@ -48,6 +50,10 @@ SRC_URI = " \
     "
 
 S = "${WORKDIR}/git/pyaci"
+
+do_compile() {
+    git submodule update --init
+}
 
 do_install() {
     install         -d                     ${D}/opt/wildflower/pyaci/aci
@@ -58,6 +64,11 @@ do_install() {
     install         -d                          ${D}/opt/wildflower/pyaci/aci_serial
     install -m 0644 ${S}/aci_serial/AciUart.py  ${D}/opt/wildflower/pyaci/aci_serial
     install -m 0644 ${S}/aci_serial/__init__.py ${D}/opt/wildflower/pyaci/aci_serial
+
+    install         -d                          ${D}/opt/wildflower/pyaci/senseiconf
+    install -m 0644 ${S}/senseiconf/config.py   ${D}/opt/wildflower/pyaci/senseiconf
+    install -m 0644 ${S}/senseiconf/schedule.py ${D}/opt/wildflower/pyaci/senseiconf
+    install -m 0644 ${S}/senseiconf/__init__.py ${D}/opt/wildflower/pyaci/senseiconf
 
     install -m 0644 ${S}/datetime_modulo.py ${D}/opt/wildflower/pyaci
     install -m 0644 ${S}/sensei_cmd.py      ${D}/opt/wildflower/pyaci
@@ -77,6 +88,7 @@ do_install() {
 
 FILES_${PN}-common = " \
     /opt/wildflower/pyaci/sensei_cmd.py \
+    /opt/wildflower/pyaci/senseiconf/ \
     ${CONFFILES_${PN}-common} \
     "
 CONFFILES_${PN}-common = " \
