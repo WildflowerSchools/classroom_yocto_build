@@ -34,6 +34,7 @@ IMAGE_INSTALL += " \
     vim \
     tmux \
     procps \
+    dosfstools \
     pyaci-collector \
     pyaci-uploader \
 "
