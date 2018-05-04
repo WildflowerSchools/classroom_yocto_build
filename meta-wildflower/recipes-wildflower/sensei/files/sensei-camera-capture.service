@@ -1,0 +1,12 @@
+[Unit]
+Description=Collect Wildflower Imagery
+
+[Service]
+Type=simple
+#@python3 means that "wildflower" will be shown as executable name in
+#"ps", but python3 is the executable
+ExecStart=@/usr/bin/python3 wildflower /opt/wildflower/camera/capture.py -d /var/spool/wf-images
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

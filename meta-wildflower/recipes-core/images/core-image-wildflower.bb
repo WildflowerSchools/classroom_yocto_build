@@ -37,6 +37,7 @@ IMAGE_INSTALL += " \
     dosfstools \
     pyaci-collector \
     pyaci-uploader \
+    sensei-camera-capture \
 "
 
 export IMAGE_BASENAME = "core-image-wildflower"
