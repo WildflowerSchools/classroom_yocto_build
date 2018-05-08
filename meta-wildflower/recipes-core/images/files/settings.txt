@@ -2,3 +2,4 @@
 # may be added in the future.
 
 HOSTNAME=sampiname
+CAMNUM=1
