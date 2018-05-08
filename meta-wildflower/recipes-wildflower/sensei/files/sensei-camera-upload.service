@@ -7,7 +7,7 @@ Type=simple
 #@python3 means that "wildflower" will be shown as executable name in
 #"ps", but python3 is the executable
 EnvironmentFile=/boot/config/settings.txt
-ExecStart=@/usr/bin/python3 wildflower /opt/wildflower/camera/upload.py -d /var/spool/wf-images -c $CAMNUM
+ExecStart=@/usr/bin/python3 wildflower -u /opt/wildflower/camera/upload.py -d /var/spool/wf-images -c $CAMNUM
 Restart=always
 
 [Install]

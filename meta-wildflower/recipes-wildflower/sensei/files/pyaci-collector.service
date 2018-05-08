@@ -7,5 +7,5 @@ BindsTo=dev-ttyUSB0.device
 Type=simple
 #@python3 means that "wildflower" will be shown as executable name in
 #"ps", but python3 is the executable
-ExecStart=@/usr/bin/python3 wildflower /opt/wildflower/pyaci/collector.py
+ExecStart=@/usr/bin/python3 wildflower -u /opt/wildflower/pyaci/collector.py
 Restart=always
