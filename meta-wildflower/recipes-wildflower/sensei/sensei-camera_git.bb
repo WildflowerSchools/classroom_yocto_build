@@ -2,7 +2,7 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 FILESEXTRAPATHS_append := "${TOPDIR}/../poky/meta"
 
-PR="r0"
+PR="r1"
 
 DESCRIPTION = "Wildflower Camera Capture and Upload"
 HOMEPAGE = ""
@@ -11,6 +11,7 @@ RDEPENDS_${PN}-capture = " \
     python3-picamera \
 \
     pyaci-common \
+    mp4box \
     "
 
 RDEPENDS_${PN}-upload = " \
@@ -23,7 +24,7 @@ inherit systemd
 PACKAGES="${PN}-capture ${PN}-upload"
 SYSTEMD_PACKAGES="${PN}-capture ${PN}-upload"
 
-SRCREV = "42eed234bdaf202b7594b25ebeaf53ac0e2be496"
+SRCREV = "3226480d3fa9133c0a6f8e7ea2d95888e3202c35"
 SRC_URI = " \
     git://github.com/WildflowerSchools/camera;protocol=http \
     file://COPYING.MIT \

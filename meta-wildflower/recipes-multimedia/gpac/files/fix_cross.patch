@@ -1,0 +1,35 @@
+diff --git a/configure b/configure
+index 485bfe22b..433535571 100755
+--- a/configure
++++ b/configure
+@@ -443,15 +443,15 @@ if test -z "$CFLAGS"; then
+ fi
+ 
+ 
+-cc="${cross_prefix}${cc}"
++cc="${cc}"
+ #for ccache
+ cc="${cc}"
+-cxx="${cross_prefix}${cxx}"
+-ar="${cross_prefix}${ar}"
+-ranlib="${cross_prefix}${ranlib}"
+-strip="${cross_prefix}${strip}"
++cxx="${cxx}"
++ar="${ar}"
++ranlib="${ranlib}"
++strip="${strip}"
+ pkg_config="${pkg_config}"
+-windres="${cross_prefix}${windres}"
++windres="${windres}"
+ 
+ 
+ #check pkg_config
+@@ -647,7 +647,7 @@ target_bin_dir=""
+ if test "$cross_prefix" = "" ; then
+     target_bin_dir=`${cc} -v 2>>$logs | sed -n '2p' | awk ' {print $2}'`-${cc_orig}
+ else
+-    target_bin_dir=${cross_prefix}${cc_orig}
++    target_bin_dir=${cc_orig}
+ fi
+ 
+ 
