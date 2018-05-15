@@ -2,7 +2,7 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 FILESEXTRAPATHS_append := "${TOPDIR}/../poky/meta"
 
-PR="r1"
+PR="r2"
 
 DESCRIPTION = "Sensor Data Capture and Upload"
 HOMEPAGE = ""
@@ -40,9 +40,9 @@ inherit systemd
 PACKAGES="${PN}-common ${PN}-collector ${PN}-uploader"
 SYSTEMD_PACKAGES="${PN}-collector ${PN}-uploader"
 
-SRCREV = "c1c2153a678646299a122f0ec9d6733c86687d58"
+SRCREV = "3b7a6ebe97c95d6700f0c62c4611ee54298a4d9d"
 SRC_URI = " \
-    git://github.com/Circuitsoft/sensei_mesh;protocol=http;branch=new_config \
+    git://github.com/WildflowerSchools/sensei_mesh;protocol=http \
     file://COPYING.MIT \
     file://pyaci-collector.service \
     file://pyaci-uploader.service \
@@ -103,6 +103,7 @@ FILES_${PN}-collector = " \
     ${sysconfdir}/udev/rules.d/serial.rules \
     "
 SYSTEMD_SERVICE_${PN}-collector = "${PN}-collector.service"
+SYSTEMD_AUTO_ENABLE_${PN}-collector = "disable"
 
 FILES_${PN}-uploader = " \
     /opt/wildflower/pyaci/uploader.py \
