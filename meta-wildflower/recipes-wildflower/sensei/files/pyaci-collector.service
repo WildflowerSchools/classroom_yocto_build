@@ -2,6 +2,7 @@
 Description=Collect Wildflower Sensor Data
 Requires=redis.service
 BindsTo=dev-ttyUSB0.device
+After=time-sync.target
 
 [Service]
 Type=simple

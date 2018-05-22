@@ -1,5 +1,6 @@
 [Unit]
 Description=Collect Wildflower Imagery
+After=time-sync.target
 
 [Service]
 Type=simple
