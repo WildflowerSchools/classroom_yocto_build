@@ -26,11 +26,11 @@ SRC_URI = "https://files.pythonhosted.org/packages/source/s/${SRCNAME}/${SRCNAME
            file://cloud \
            file://roster \
            file://set_python_location_hashbang.patch \
-           file://enable_opkg_on_poky.patch \
 "
 
-SRC_URI[md5sum] = "b6ec271b59554b9af7ff4005028434b5"
-SRC_URI[sha256sum] = "a0a45d22fdf6961542a419b7e09568a3118e2b019ffe7bab9dee5aeb55b56b31"
+SRC_URI[md5sum] = "13ba421e4bea1f33617b30b1116a9d32"
+SRC_URI[sha256sum] = "dcf30d2e8eae105a72977c51cfc253fbc4dc28b2f71277fdce9d35de1eb63e15"
+
 
 S = "${WORKDIR}/${SRCNAME}-${PV}"
 

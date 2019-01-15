@@ -8,7 +8,7 @@ DESCRIPTION = "Sensor Data Capture and Upload"
 HOMEPAGE = ""
 LICENSE = "MIT"
 RDEPENDS_${PN}-collector = " \
-    python3-argparse \
+    python3-core \
     python3-datetime \
     python3-json \
     python3-logging \
@@ -24,10 +24,9 @@ RDEPENDS_${PN}-collector = " \
     "
 
 RDEPENDS_${PN}-uploader = " \
-    python3-argparse \
+    python3-core \
     python3-datetime \
     python3-json \
-    python3-lang \
 \
     python3-redis \
     redis \

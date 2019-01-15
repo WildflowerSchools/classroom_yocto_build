@@ -4,7 +4,7 @@
 DESCRIPTION = "Wildflower Sensei client Python library"
 HOMEPAGE = ""
 LICENSE = "MIT"
-DEPENDS = "python3-netclient python3-json python3-datetime python3-enum python3-dateutil"
+RDEPENDS_${PN} = "python3-netclient python3-json python3-datetime python3-core python3-dateutil"
 
 inherit setuptools3
 

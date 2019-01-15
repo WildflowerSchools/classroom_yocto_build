@@ -7,7 +7,6 @@ IMAGE_LINGUAS = "en-us"
 
 inherit core-image
 
-DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
@@ -23,7 +22,7 @@ WIFI_SUPPORT = " \
     iw \
     linux-firmware-raspbian-bcm43430 \
     linux-firmware-raspbian-bcm43455 \
-    wireless-tools \
+    iw \
     wildflower-misc-net \
     avahi-daemon \
 "

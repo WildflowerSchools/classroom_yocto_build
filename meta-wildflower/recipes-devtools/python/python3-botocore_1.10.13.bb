@@ -16,7 +16,7 @@ RDEPENDS_${PN} += " \
     python3-netserver \
     python3-numbers \
     python3-shell \
-    python3-subprocess \
+    python3-core \
     python3-unixadmin \
     python3-xml \
 \
