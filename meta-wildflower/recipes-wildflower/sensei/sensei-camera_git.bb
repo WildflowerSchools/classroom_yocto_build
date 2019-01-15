@@ -2,7 +2,7 @@
 # Released under the MIT license (see COPYING.MIT for the terms)
 FILESEXTRAPATHS_append := "${TOPDIR}/../poky/meta"
 
-PR="r1"
+PR="r2"
 
 DESCRIPTION = "Wildflower Camera Capture and Upload"
 HOMEPAGE = ""
@@ -11,7 +11,7 @@ RDEPENDS_${PN}-capture = " \
     python3-picamera \
 \
     pyaci-common \
-    mp4box \
+    ffmpeg \
     "
 
 RDEPENDS_${PN}-upload = " \
@@ -34,6 +34,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 do_install() {
+    sed -i s/.*call.*/'            subprocess.call(["ffmpeg", "-f", "h264", "-r", str(framerate), "-i", temp_name, "-c:v", "copy", mp4_name])/' ${S}/capture.py
     install         -d              ${D}/opt/wildflower/camera
     install -m 0755 ${S}/capture.py ${D}/opt/wildflower/camera
     install -m 0755 ${S}/upload.py  ${D}/opt/wildflower/camera
