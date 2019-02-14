@@ -37,6 +37,7 @@ IMAGE_INSTALL += " \
     pyaci-collector \
     pyaci-uploader \
     sensei-camera-upload \
+    docker \
 "
 
 export IMAGE_BASENAME = "core-image-wildflower"
