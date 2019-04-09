@@ -26,7 +26,7 @@ SYSTEMD_PACKAGES="${PN}-capture ${PN}-upload"
 
 SRCREV = "3226480d3fa9133c0a6f8e7ea2d95888e3202c35"
 SRC_URI = " \
-    git://github.com/WildflowerSchools/camera;protocol=http \
+    git://git@github.com/WildflowerSchools/camera;protocol=ssh \
     file://COPYING.MIT \
     file://sensei-camera-capture.service \
     file://sensei-camera-upload.service \

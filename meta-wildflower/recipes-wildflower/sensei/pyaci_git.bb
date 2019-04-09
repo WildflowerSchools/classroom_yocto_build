@@ -41,7 +41,7 @@ SYSTEMD_PACKAGES="${PN}-collector ${PN}-uploader"
 
 SRCREV = "3b7a6ebe97c95d6700f0c62c4611ee54298a4d9d"
 SRC_URI = " \
-    git://github.com/WildflowerSchools/sensei_mesh;protocol=http \
+    git://git@github.com/WildflowerSchools/sensei_mesh;protocol=ssh \
     file://COPYING.MIT \
     file://pyaci-collector.service \
     file://pyaci-uploader.service \

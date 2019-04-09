@@ -9,7 +9,7 @@ RDEPENDS_${PN} = "python3-netclient python3-json python3-datetime python3-core p
 inherit setuptools3
 
 SRCREV = "ce942cf589db9b017ccbe5bd383b80cfbc180057"
-SRC_URI = "git://github.com/WildflowerSchools/sensei_client;protocol=http"
+SRC_URI = "git://git@github.com/WildflowerSchools/sensei_client;protocol=ssh"
 S = "${WORKDIR}/git"
 
 
